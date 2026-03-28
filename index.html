@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Locals #1 - QR Slide</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #0a1628;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+  }
+  .slide {
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #0a1628 0%, #162340 50%, #0a1628 100%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(0,212,170,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0,212,170,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .badge {
+    display: inline-block;
+    border: 2px solid #00d4aa;
+    color: #00d4aa;
+    padding: 6px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  h1 span { color: #00d4aa; }
+  .subtitle {
+    font-size: 20px;
+    color: #8899b0;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+  }
+  .qr-section {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .qr-card {
+    text-align: center;
+  }
+  .qr-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00d4aa;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .qr-flag {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  .qr-img {
+    width: 180px;
+    height: 180px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qr-img img {
+    width: 160px;
+    height: 160px;
+  }
+  .qr-hint {
+    font-size: 13px;
+    color: #6a7a90;
+    margin-top: 8px;
+  }
+  .divider {
+    width: 2px;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, #00d4aa, transparent);
+  }
+  .scan-text {
+    font-size: 18px;
+    color: #c0c8d8;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .scan-text span { color: #00d4aa; font-weight: 600; }
+  .footer {
+    position: absolute;
+    bottom: 24px;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 13px;
+    color: #4a5a70;
+  }
+  .footer span { color: #00d4aa; }
+
+  @media (max-width: 800px) {
+    .slide { padding: 30px 20px; aspect-ratio: auto; }
+    h1 { font-size: 32px; }
+    .qr-section { flex-direction: column; gap: 30px; }
+    .divider { width: 200px; height: 2px; }
+    .qr-img { width: 150px; height: 150px; }
+    .qr-img img { width: 130px; height: 130px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="badge">Workshop #1</div>
+  <h1>AI for <span>Locals</span></h1>
+  <p class="subtitle">Hayalindeki projeyi yapay zeka ile hayata geçir</p>
+
+  <p class="scan-text">Telefonunuzla tarayın. <span>Scan with your phone.</span></p>
+
+  <div class="qr-section">
+    <div class="qr-card">
+      <div class="qr-flag">🇹🇷</div>
+      <div class="qr-label">Türkçe Rehber</div>
+      <div class="qr-img">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://tagore11.github.io/ai-for-locals/tr.html&color=0a1628&bgcolor=ffffff" alt="TR QR">
+      </div>
+      <div class="qr-hint">tr.html</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="qr-card">
+      <div class="qr-flag">🇬🇧</div>
+      <div class="qr-label">English Guide</div>
+      <div class="qr-img">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://tagore11.github.io/ai-for-locals/en.html&color=0a1628&bgcolor=ffffff" alt="EN QR">
+      </div>
+      <div class="qr-hint">en.html</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>ZuKaş</span> · <span>Web3 Meta Hub</span> · <span>Kaş Belediyesi</span> · <span>Botanica School</span>
+  </div>
+</div>
+
+</body>
+</html>
